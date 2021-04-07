@@ -223,59 +223,61 @@
 // const sum = numbers.reduce((acc, el) => acc + el);
 
 // console.log(sum);
-function dirReduc(arr) {
-  let arrCopy = [...arr];
-  console.log("hei");
-  let itemsNumbers = [];
-  let flag = true;
-  const compareFunction = (a, b) => {
-    switch (a) {
-      case "WEST":
-        if (b === "EAST") {
-          return true;
-        }
-      case "EAST":
-        if (b === "WEST") {
-          return true;
-        }
-      case "NORTH":
-        if (b === "SOUTH") {
-          return true;
-        }
-      case "SOUTH":
-        if (b === "NORTH") {
-          return true;
-        }
-      default:
-        return false;
-    }
-  };
+// function dirReduc(arr) {
+//   let reuslt = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i + 1]) {
-      if (flag) {
-        if (compareFunction(arr[i], arr[i + 1])) {
-          itemsNumbers = [...itemsNumbers, i, i + 1];
-          flag = false;
-        }
-      } else {
-        flag = true;
-      }
-    }
-  }
+//   let arrCopy = [...arr];
+//   let itemsNumbers = [];
+//   let flag = true;
+//   const compareFunction = (a, b) => {
+//     switch (a) {
+//       case "WEST":
+//         if (b === "EAST") {
+//           return true;
+//         }
+//       case "EAST":
+//         if (b === "WEST") {
+//           return true;
+//         }
+//       case "NORTH":
+//         if (b === "SOUTH") {
+//           return true;
+//         }
+//       case "SOUTH":
+//         if (b === "NORTH") {
+//           return true;
+//         }
+//       default:
+//         return false;
+//     }
+//   };
 
-  if (itemsNumbers.length > 0) {
-    for (let i = itemsNumbers.length - 1; i >= 0; i--) {
-      arrCopy.splice(itemsNumbers[i], 1);
-    }
-    console.log({ arrCopy }, "first branch", { itemsNumbers });
-    dirReduc(arrCopy);
-  } else {
-    console.log("second branch finish", arrCopy);
-    return arrCopy;
-  }
-}
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i + 1]) {
+//       if (flag) {
+//         if (compareFunction(arr[i], arr[i + 1])) {
+//           itemsNumbers = [...itemsNumbers, i, i + 1];
+//           flag = false;
+//         }
+//       } else {
+//         flag = true;
+//       }
+//     }
+//   }
 
-console.log(
-  dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
-);
+//   if (itemsNumbers.length > 0) {
+//     for (let i = itemsNumbers.length - 1; i >= 0; i--) {
+//       arrCopy.splice(itemsNumbers[i], 1);
+//     }
+//     console.log({ arrCopy }, "first branch", { itemsNumbers });
+//     dirReduc(arrCopy);
+//   } else {
+//     console.log("second branch finish", arrCopy);
+//     result = arrCopy;
+//   }
+
+//   // return 10;
+
+// console.log(
+//   dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+// );
