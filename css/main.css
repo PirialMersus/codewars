@@ -1,0 +1,37 @@
+.googleImg {
+  display: inline-block;
+  margin: auto;
+}
+.wrap {
+  margin: auto;
+  text-align: center;
+}
+.googleImg {
+  display: block;
+}
+#inputFind {
+  padding: 10px 30px;
+  border-radius: 30px;
+  outline: none;
+  width: 500px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(177, 9, 9, 0.794);
+  transition: all 0.3s ease;
+}
+#inputFind:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.794);
+}
+
+#btnFind {
+  margin: auto;
+  display: block;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: green;
+  border: none;
+  transition: all 0.3s ease;
+}
+#btnFind:hover {
+  background-color: rgb(1, 195, 1);
+}
