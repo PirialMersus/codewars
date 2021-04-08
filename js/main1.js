@@ -223,61 +223,62 @@
 // const sum = numbers.reduce((acc, el) => acc + el);
 
 // console.log(sum);
-// function dirReduc(arr) {
-//   let reuslt = [];
+function dirReduc(arr) {
+  let arrCopy = [...arr];
+  let itemsNumbers = [];
+  let flag = true;
+  const compareFunction = (a, b) => {
+    switch (a) {
+      case "WEST":
+        if (b === "EAST") {
+          return true;
+        }
+        break;
+      case "EAST":
+        if (b === "WEST") {
+          return true;
+        }
+        break;
+      case "NORTH":
+        if (b === "SOUTH") {
+          return true;
+        }
+        break;
+      case "SOUTH":
+        if (b === "NORTH") {
+          return true;
+        }
+        break;
+      default:
+        return false;
+    }
+  };
 
-//   let arrCopy = [...arr];
-//   let itemsNumbers = [];
-//   let flag = true;
-//   const compareFunction = (a, b) => {
-//     switch (a) {
-//       case "WEST":
-//         if (b === "EAST") {
-//           return true;
-//         }
-//       case "EAST":
-//         if (b === "WEST") {
-//           return true;
-//         }
-//       case "NORTH":
-//         if (b === "SOUTH") {
-//           return true;
-//         }
-//       case "SOUTH":
-//         if (b === "NORTH") {
-//           return true;
-//         }
-//       default:
-//         return false;
-//     }
-//   };
+  for (let i = 0; i < arrCopy.length; i++) {
+    if (arrCopy[i + 1]) {
+      if (flag) {
+        if (compareFunction(arrCopy[i], arrCopy[i + 1])) {
+          itemsNumbers = [...itemsNumbers, i, i + 1];
+          flag = false;
+        } else {
+          flag = true;
+        }
+      }
+    }
+  }
 
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i + 1]) {
-//       if (flag) {
-//         if (compareFunction(arr[i], arr[i + 1])) {
-//           itemsNumbers = [...itemsNumbers, i, i + 1];
-//           flag = false;
-//         }
-//       } else {
-//         flag = true;
-//       }
-//     }
-//   }
+  if (itemsNumbers.length > 0) {
+    for (let i = itemsNumbers.length - 1; i >= 0; i--) {
+      arrCopy.splice(itemsNumbers[i], 1);
+    }
+    return dirReduc(arrCopy);
+  } else {
+    return arrCopy;
+  }
+}
 
-//   if (itemsNumbers.length > 0) {
-//     for (let i = itemsNumbers.length - 1; i >= 0; i--) {
-//       arrCopy.splice(itemsNumbers[i], 1);
-//     }
-//     console.log({ arrCopy }, "first branch", { itemsNumbers });
-//     dirReduc(arrCopy);
-//   } else {
-//     console.log("second branch finish", arrCopy);
-//     result = arrCopy;
-//   }
-
-//   // return 10;
-
-// console.log(
-//   dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
-// );
+console.log(
+  dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+);
+console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
+console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
