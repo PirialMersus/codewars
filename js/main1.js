@@ -299,9 +299,11 @@
 //   //  [...st, friends: [...newArray.filter((student) => student.name !== st.name)],
 //   //   ]});
 //   // });
+//   const friends = newArray.map((st) => st.name);
+//   console.log(friends);
 //   return newArray.map((el) => ({
 //     ...el,
-//     friends: [...arr.filter((student) => student.name !== el.name)],
+//     friends: friends.filter((friend) => friend !== el.name),
 //   }));
 // }
 
