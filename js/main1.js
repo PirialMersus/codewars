@@ -223,62 +223,86 @@
 // const sum = numbers.reduce((acc, el) => acc + el);
 
 // console.log(sum);
-function dirReduc(arr) {
-  let arrCopy = [...arr];
-  let itemsNumbers = [];
-  let flag = true;
-  const compareFunction = (a, b) => {
-    switch (a) {
-      case "WEST":
-        if (b === "EAST") {
-          return true;
-        }
-        break;
-      case "EAST":
-        if (b === "WEST") {
-          return true;
-        }
-        break;
-      case "NORTH":
-        if (b === "SOUTH") {
-          return true;
-        }
-        break;
-      case "SOUTH":
-        if (b === "NORTH") {
-          return true;
-        }
-        break;
-      default:
-        return false;
-    }
-  };
+// function dirReduc(arr) {
+//   let arrCopy = [...arr];
+//   let itemsNumbers = [];
+//   let flag = true;
+//   const compareFunction = (a, b) => {
+//     switch (a) {
+//       case "WEST":
+//         if (b === "EAST") {
+//           return true;
+//         }
+//         break;
+//       case "EAST":
+//         if (b === "WEST") {
+//           return true;
+//         }
+//         break;
+//       case "NORTH":
+//         if (b === "SOUTH") {
+//           return true;
+//         }
+//         break;
+//       case "SOUTH":
+//         if (b === "NORTH") {
+//           return true;
+//         }
+//         break;
+//       default:
+//         return false;
+//     }
+//   };
 
-  for (let i = 0; i < arrCopy.length; i++) {
-    if (arrCopy[i + 1]) {
-      if (flag) {
-        if (compareFunction(arrCopy[i], arrCopy[i + 1])) {
-          itemsNumbers = [...itemsNumbers, i, i + 1];
-          flag = false;
-        } else {
-          flag = true;
-        }
-      }
-    }
-  }
+//   for (let i = 0; i < arrCopy.length; i++) {
+//     if (arrCopy[i + 1]) {
+//       if (flag) {
+//         if (compareFunction(arrCopy[i], arrCopy[i + 1])) {
+//           itemsNumbers = [...itemsNumbers, i, i + 1];
+//           flag = false;
+//         } else {
+//           flag = true;
+//         }
+//       }
+//     }
+//   }
 
-  if (itemsNumbers.length > 0) {
-    for (let i = itemsNumbers.length - 1; i >= 0; i--) {
-      arrCopy.splice(itemsNumbers[i], 1);
-    }
-    return dirReduc(arrCopy);
-  } else {
-    return arrCopy;
-  }
-}
+//   if (itemsNumbers.length > 0) {
+//     for (let i = itemsNumbers.length - 1; i >= 0; i--) {
+//       arrCopy.splice(itemsNumbers[i], 1);
+//     }
+//     return dirReduc(arrCopy);
+//   } else {
+//     return arrCopy;
+//   }
+// }
 
-console.log(
-  dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
-);
-console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
-console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
+// console.log(
+//   dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+// );
+// console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
+// console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
+// const students = [
+//   { name: "gena", age: 35 },
+//   { name: "alena", age: 25 },
+//   { name: "kay", age: 37 },
+//   { name: "olya", age: 15 },
+//   { name: "step", age: 125 },
+//   { name: "kris", age: 9 },
+//   { name: "julia", age: 45 },
+//   { name: "serg", age: 383 },
+// ];
+
+// function addNewField(arr) {
+//   const newArray = [...arr];
+//   // newArray.map((st) => {
+//   //  [...st, friends: [...newArray.filter((student) => student.name !== st.name)],
+//   //   ]});
+//   // });
+//   return newArray.map((el) => ({
+//     ...el,
+//     friends: [...arr.filter((student) => student.name !== el.name)],
+//   }));
+// }
+
+// console.log(addNewField(students));
