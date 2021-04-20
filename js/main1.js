@@ -308,3 +308,247 @@
 // }
 
 // console.log(addNewField(students));
+// function zero(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(0 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(0 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(0 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(0 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 0;
+//   }
+// }
+// function one(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(1 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(1 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(1 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(1 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 1;
+//   }
+// }
+// function two(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(2 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(2 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(2 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(2 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 2;
+//   }
+// }
+// function three(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(3 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(3 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(3 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(3 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 3;
+//   }
+// }
+// function four(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(4 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(4 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(4 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(4 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 4;
+//   }
+// }
+// function five(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(5 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(5 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(5 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(5 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 5;
+//   }
+// }
+// function six(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(6 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(6 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(6 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(6 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 6;
+//   }
+// }
+// function seven(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(7 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(7 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(7 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(7 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 7;
+//   }
+// }
+// function eight(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(8 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(8 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(8 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(8 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 8;
+//   }
+// }
+// function nine(b) {
+//   if (b) {
+//     switch (b[0]) {
+//       case "plus":
+//         return Math.floor(9 + b[1]);
+//         break;
+//       case "minus":
+//         return Math.floor(9 - b[1]);
+//         break;
+//       case "times":
+//         return Math.floor(9 * b[1]);
+//         break;
+//       case "divide":
+//         return Math.floor(9 / b[1]);
+//         break;
+//       default:
+//         alert("Нет таких значений");
+//     }
+//   } else {
+//     return 9;
+//   }
+// }
+
+// function plus(a) {
+//   return ["plus", a];
+// }
+// function minus(a) {
+//   return ["minus", a];
+// }
+// function times(a) {
+//   return ["times", a];
+// }
+// function dividedBy(a) {
+//   return ["divide", a];
+// }
+function validParentheses(parens) {
+  if (parens.length % 2 > 0) {
+    return false;
+  }
+  const arr = parens.split();
+  for (let i = 0; i < arr.length / 2; i++) {
+    if (arr[i] === ")") return false;
+    else {
+    }
+  }
+}
