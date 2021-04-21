@@ -626,6 +626,7 @@ function validParentheses(parens) {
 
   return true;
 }
-// console.log(validParentheses("()()()()()()()()()()()()()()()()()()()(("));
 console.log(validParentheses("()((()))()()()()()()()()()()()()()()((()"));
+// console.log(validParentheses("()()()()()()()()()()()()()()()()()()()(("));
+
 // console.log(validParentheses("(())))"));
