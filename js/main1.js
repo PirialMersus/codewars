@@ -542,91 +542,98 @@
 //   return ["divide", a];
 // }
 // ..................................................
-// function validParentheses(parens) {
-//   if (parens.length % 2 > 0) {
-//     return false;
-//   }
-
-//   const arr = parens.split("");
-
-//   for (let i = 0; i < arr.length - 1; i++) {
-//     if (arr[i] === ")") {
-//       return false;
-//     } else {
-//       for (let j = i + 1; j < arr.length; j++) {
-//         if (arr[j] === ")") {
-//           arr.splice(j, 1);
-//           arr.splice(i, 1);
-//           break;
-//         }
-//       }
-//       break;
-//     }
-//   }
-
-//   if (arr.length > 0) {
-//     return validParentheses(arr.join(""));
-//   }
-//   return true;
-// }
-// console.log(validParentheses("(())((()())())"));
-// console.log(validParentheses("())"));
-// console.log(validParentheses("(())))"));
-// ////////////////............................................
 function validParentheses(parens) {
-  // debugger;
   if (parens.length % 2 > 0) {
     return false;
   }
 
   const arr = parens.split("");
-  const tempArr = [];
-  let flag = true;
 
   for (let i = 0; i < arr.length - 1; i++) {
-    flag = true;
-
-    if (tempArr.length) {
-      tempArr.map((el) => {
-        if (i === el) {
-          flag = false;
+    if (arr[i] === ")") {
+      return false;
+    } else {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[j] === ")") {
+          arr.splice(j, 1);
+          arr.splice(i, 1);
+          break;
         }
-      });
-    }
-
-    if (flag) {
-      if (arr[i] === ")") {
-        return false;
-      }
-      if (arr[i] === "(") {
-        for (let j = i + 1; j < arr.length; j++) {
-          flag = true;
-
-          if (tempArr.length) {
-            tempArr.map((el) => {
-              if (j === el) {
-                flag = false;
-              }
-            });
-          }
-
-          if (flag) {
-            if (arr[j] === ")") {
-              tempArr.push(j);
-              break;
-            }
-            if (j === arr.length - 1) {
-              return false;
-            }
-          }
+        if (j === arr.length - 1) {
+          return false;
         }
       }
+      break;
     }
   }
 
+  if (arr.length > 0) {
+    return validParentheses(arr.join(""));
+  }
   return true;
 }
+console.log(validParentheses("(())((()())())"));
+console.log(validParentheses("())"));
+console.log(validParentheses("(())))"));
 console.log(validParentheses("()((()))()()()()()()()()()()()()()()((()"));
+console.log(validParentheses("()()()()()()()()()()()()()()()()()()()(("));
+
+// console.log(validParentheses("(())))"));
+// ////////////////............................................
+// function validParentheses(parens) {
+//   // debugger;
+//   if (parens.length % 2 > 0) {
+//     return false;
+//   }
+
+//   const arr = parens.split("");
+//   const tempArr = [];
+//   let flag = true;
+
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     flag = true;
+
+//     if (tempArr.length) {
+//       tempArr.map((el) => {
+//         if (i === el) {
+//           flag = false;
+//         }
+//       });
+//     }
+
+//     if (flag) {
+//       if (arr[i] === ")") {
+//         return false;
+//       }
+//       if (arr[i] === "(") {
+//         for (let j = i + 1; j < arr.length; j++) {
+//           flag = true;
+
+//           if (tempArr.length) {
+//             tempArr.map((el) => {
+//               if (j === el) {
+//                 flag = false;
+//               }
+//             });
+//           }
+
+//           if (flag) {
+//             if (arr[j] === ")") {
+//               tempArr.push(j);
+//               break;
+//             }
+//             if (j === arr.length - 1) {
+//               return false;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   return true;
+// }
+// console.log(validParentheses("()((()))()()()()()()()()()()()()()()((()"));
 // console.log(validParentheses("()()()()()()()()()()()()()()()()()()()(("));
 
 // console.log(validParentheses("(())))"));
