@@ -542,41 +542,41 @@
 //   return ["divide", a];
 // }
 // ..................................................
-function validParentheses(parens) {
-  if (parens.length % 2 > 0) {
-    return false;
-  }
+// function validParentheses(parens) {
+//   if (parens.length % 2 > 0) {
+//     return false;
+//   }
 
-  const arr = parens.split("");
+//   const arr = parens.split("");
 
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] === ")") {
-      return false;
-    } else {
-      for (let j = i + 1; j < arr.length; j++) {
-        if (arr[j] === ")") {
-          arr.splice(j, 1);
-          arr.splice(i, 1);
-          break;
-        }
-        if (j === arr.length - 1) {
-          return false;
-        }
-      }
-      break;
-    }
-  }
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i] === ")") {
+//       return false;
+//     } else {
+//       for (let j = i + 1; j < arr.length; j++) {
+//         if (arr[j] === ")") {
+//           arr.splice(j, 1);
+//           arr.splice(i, 1);
+//           break;
+//         }
+//         if (j === arr.length - 1) {
+//           return false;
+//         }
+//       }
+//       break;
+//     }
+//   }
 
-  if (arr.length > 0) {
-    return validParentheses(arr.join(""));
-  }
-  return true;
-}
-console.log(validParentheses("(())((()())())"));
-console.log(validParentheses("())"));
-console.log(validParentheses("(())))"));
-console.log(validParentheses("()((()))()()()()()()()()()()()()()()((()"));
-console.log(validParentheses("()()()()()()()()()()()()()()()()()()()(("));
+//   if (arr.length > 0) {
+//     return validParentheses(arr.join(""));
+//   }
+//   return true;
+// }
+// console.log(validParentheses("(())((()())())"));
+// console.log(validParentheses("())"));
+// console.log(validParentheses("(())))"));
+// console.log(validParentheses("()((()))()()()()()()()()()()()()()()((()"));
+// console.log(validParentheses("()()()()()()()()()()()()()()()()()()()(("));
 
 // console.log(validParentheses("(())))"));
 // ////////////////............................................
@@ -637,3 +637,26 @@ console.log(validParentheses("()()()()()()()()()()()()()()()()()()()(("));
 // console.log(validParentheses("()()()()()()()()()()()()()()()()()()()(("));
 
 // console.log(validParentheses("(())))"));
+//////////////////////////////////////.........................................
+function task(w, n, c) {
+  let name = "";
+  if (w === "Monday") {
+    name = "James";
+  }
+  if (w === "Tuesday") {
+    name = "John";
+  }
+  if (w === "Wednesday") {
+    name = "Robert";
+  }
+  if (w === "Thursday") {
+    name = "Michael";
+  }
+  if (w === "Friday") {
+    name = "William";
+  }
+  // your code
+  return `It is ${w} today, ${name}, you have to work, you must spray ${n} trees and you need ${
+    n * c
+  } dollars to buy liquid`;
+}
