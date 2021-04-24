@@ -638,25 +638,39 @@
 
 // console.log(validParentheses("(())))"));
 //////////////////////////////////////.........................................
-function task(w, n, c) {
-  let name = "";
-  if (w === "Monday") {
-    name = "James";
+// function task(w, n, c) {
+//   let name = "";
+//   if (w === "Monday") {
+//     name = "James";
+//   }
+//   if (w === "Tuesday") {
+//     name = "John";
+//   }
+//   if (w === "Wednesday") {
+//     name = "Robert";
+//   }
+//   if (w === "Thursday") {
+//     name = "Michael";
+//   }
+//   if (w === "Friday") {
+//     name = "William";
+//   }
+//   // your code
+//   return `It is ${w} today, ${name}, you have to work, you must spray ${n} trees and you need ${
+//     n * c
+//   } dollars to buy liquid`;
+// }
+function evenLast(numbers) {
+  if (numbers.length === 0) return 0;
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (i % 2 === 0) {
+      sum = sum + numbers[i];
+    }
+    if (i === numbers.length - 1) {
+      sum = sum * numbers[i];
+    }
   }
-  if (w === "Tuesday") {
-    name = "John";
-  }
-  if (w === "Wednesday") {
-    name = "Robert";
-  }
-  if (w === "Thursday") {
-    name = "Michael";
-  }
-  if (w === "Friday") {
-    name = "William";
-  }
-  // your code
-  return `It is ${w} today, ${name}, you have to work, you must spray ${n} trees and you need ${
-    n * c
-  } dollars to buy liquid`;
+  return sum;
 }
+console.log(evenLast([2, 3, 4, 5]));
