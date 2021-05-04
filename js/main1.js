@@ -674,3 +674,52 @@
 //   return sum;
 // }
 // console.log(evenLast([2, 3, 4, 5]));
+// function solution(str) {
+//   let tempValue = "";
+//   let solutionArr = [];
+//   const lettersArr = str.split("");
+
+//   if (!lettersArr.length) return [];
+
+//   for (let i = 0; i < lettersArr.length; i++) {
+//     tempValue += lettersArr[i];
+//     if (i % 2 !== 0) {
+//       solutionArr.push(tempValue);
+//       tempValue = "";
+//     }
+//     if (i === lettersArr.length - 1 && i % 2 === 0) {
+//       solutionArr.push(tempValue + "_");
+//     }
+//   }
+//   return solutionArr;
+// }
+// console.log(solution("abc"));
+// console.log(solution("abcdef"));
+function validSpacing(s) {
+  console.log(s.split(" "));
+  const tempArr = s.split(" ");
+  if (tempArr[0] === "" || tempArr[tempArr.length - 1] === "") return false;
+  for (let i = 0; i < tempArr.length; i++) {
+    if (i === tempArr.length - 1) return true;
+    if (tempArr[i] === "" && tempArr[i + 1] === "") {
+      return false;
+    }
+  }
+
+  return true;
+}
+console.log(validSpacing("Hello  world"));
+console.log(validSpacing("Hello world"));
+console.log(validSpacing("Hello  world "));
+console.log(validSpacing(" Hello world"));
+// function validSpacing(s) {
+//   console.log(s.split(" "));
+//   const tempArr = s.split("");
+//   if (tempArr[0] === "" || tempArr[tempArr.length - 1] === "") return false;
+//   for (let i = 0; i < tempArr.length; i++) {
+//     if (tempArr[i] === "") {
+//       return
+//     }
+//   }
+//   return true;
+// }
