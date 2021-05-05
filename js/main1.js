@@ -701,7 +701,7 @@ function validSpacing(s) {
   if (tempArr[0] === "" || tempArr[tempArr.length - 1] === "") return false;
   for (let i = 0; i < tempArr.length; i++) {
     if (i === tempArr.length - 1) return true;
-    if (tempArr[i] === "" && tempArr[i + 1] === "") {
+    if (tempArr[i] === "") {
       return false;
     }
   }
