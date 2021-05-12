@@ -695,23 +695,23 @@
 // }
 // console.log(solution("abc"));
 // console.log(solution("abcdef"));
-function validSpacing(s) {
-  console.log(s.split(" "));
-  const tempArr = s.split(" ");
-  if (tempArr[0] === "" || tempArr[tempArr.length - 1] === "") return false;
-  for (let i = 0; i < tempArr.length; i++) {
-    if (i === tempArr.length - 1) return true;
-    if (tempArr[i] === "") {
-      return false;
-    }
-  }
+// function validSpacing(s) {
+//   console.log(s.split(" "));
+//   const tempArr = s.split(" ");
+//   if (tempArr[0] === "" || tempArr[tempArr.length - 1] === "") return false;
+//   for (let i = 0; i < tempArr.length; i++) {
+//     if (i === tempArr.length - 1) return true;
+//     if (tempArr[i] === "") {
+//       return false;
+//     }
+//   }
 
-  return true;
-}
-console.log(validSpacing("Hello  world"));
-console.log(validSpacing("Hello world"));
-console.log(validSpacing("Hello  world "));
-console.log(validSpacing(" Hello world"));
+//   return true;
+// }
+// console.log(validSpacing("Hello  world"));
+// console.log(validSpacing("Hello world"));
+// console.log(validSpacing("Hello  world "));
+// console.log(validSpacing(" Hello world"));
 // function validSpacing(s) {
 //   console.log(s.split(" "));
 //   const tempArr = s.split("");
@@ -723,3 +723,77 @@ console.log(validSpacing(" Hello world"));
 //   }
 //   return true;
 // }
+
+// function makeArmy() {
+//   let shooters = [];
+//   let i = 0;
+//   while (i < 10) {
+//     let j = i;
+//     let shooter = function () {
+//       // функция shooter
+//       alert(j); // должна выводить порядковый номер
+//     };
+//     shooters.push(shooter);
+//     i++;
+//   }
+
+//   return shooters;
+// }
+
+// let army = makeArmy();
+
+// army[0](); // у 0-го стрелка будет номер 10
+// army[5](); // и у 5-го стрелка тоже будет номер 10
+// ... у всех стрелков будет номер 10, вместо 0, 1, 2, 3...
+
+// Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n.
+
+// Например:
+
+// sumTo(1) = 1
+// sumTo(2) = 2 + 1 = 3
+// sumTo(3) = 3 + 2 + 1 = 6
+// sumTo(4) = 4 + 3 + 2 + 1 = 10
+// ...
+// sumTo(100) = 100 + 99 + ... + 2 + 1 = 5050
+// Сделайте три варианта решения:
+
+// С использованием цикла.
+// Через рекурсию, т.к. sumTo(n) = n + sumTo(n-1) for n > 1.
+// С использованием формулы арифметической прогрессии.
+// Пример работы вашей функции:
+
+// function sumTo(n) { /*... ваш код ... */ }
+
+// alert( sumTo(100) ); // 5050
+// P.S. Какой вариант решения самый быстрый? Самый медленный? Почему?
+
+// P.P.S. Можно ли при помощи рекурсии посчитать sumTo(100000)?
+// function sumTo(n) {
+//   if (n > 1) {
+//     return n + sumTo(n - 1);
+//   } else {
+//     return n;
+//   }
+// }
+// console.log(sumTo(100));
+function flatMethod(arr) {
+  let arrResult = [];
+  let flag = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      for (let j = 0; j < arr[i].length; j++) {
+        if (Array.isArray(arr[i][j])) {
+          arrResult.push(flatMethod(arr[i][j]));
+        } else {
+          arrResult.push(arr[i][j]);
+        }
+      }
+    } else {
+      arrResult.push(arr[i]);
+    }
+  }
+  return arrResult;
+}
+
+console.log(flatMethod([1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]));
