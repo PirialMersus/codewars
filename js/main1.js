@@ -795,12 +795,51 @@
 //   }
 //   return arrResult;
 // }
-function flatMethod(arr) {
-  return arr.reduce(
-    (acc, item) =>
-      Array.isArray(item) ? [...acc, ...flatMethod(item)] : [...acc, item],
-    []
-  );
+// function flatMethod(arr) {
+//   return arr.reduce(
+//     (acc, item) =>
+//       Array.isArray(item) ? [...acc, ...flatMethod(item)] : [...acc, item],
+//     []
+//   );
+// }
+
+// console.log(flatMethod([1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]));
+
+// function firstNonConsecutive(arr) {
+//   let width = (function () {
+//     for (let i = 0; i < arr.length; i++) {
+//       if (i !== arr.length - 2) {
+//         if (arr[i + 1] - arr[i] === arr[i + 2] - arr[i + 1]) {
+//           return arr[i + 1] - arr[i];
+//         }
+//       }
+//     }
+//   })();
+
+//   debugger;
+//   let result;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i !== arr.length - 1) {
+//       if (arr[i + 1] - arr[i] !== width) {
+//         return arr[i + 1];
+//       }
+//     }
+//   }
+//   return null;
+// }
+// console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8]));
+let i = 0;
+
+function count() {
+  // делаем часть крупной задачи (*)
+  do {
+    i++;
+    progress.innerHTML = i;
+  } while (i % 1e3 != 0);
+
+  if (i < 1e6) {
+    queueMicrotask(count);
+  }
 }
 
-console.log(flatMethod([1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]));
+count();
