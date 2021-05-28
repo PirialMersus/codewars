@@ -828,18 +828,43 @@
 //   return null;
 // }
 // console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8]));
-let i = 0;
+// let i = 0;
 
-function count() {
-  // делаем часть крупной задачи (*)
-  do {
-    i++;
-    progress.innerHTML = i;
-  } while (i % 1e3 != 0);
+// function count() {
+//   // делаем часть крупной задачи (*)
+//   do {
+//     i++;
+//     progress.innerHTML = i;
+//   } while (i % 1e3 != 0);
 
-  if (i < 1e6) {
-    queueMicrotask(count);
-  }
+//   if (i < 1e6) {
+//     queueMicrotask(count);
+//   }
+// }
+
+// count();
+function highestRank(arr) {
+  //Your Code logic should written here
+  const count = arr.reduce((tally, elem) => {
+    tally[elem] = (tally[elem] || 0) + 1;
+    return tally;
+  }, {});
+  const newArr = Object.entries(count);
+  console.log(newArr);
+
+  newArr.sort((a, b) => b[1] - a[1]);
+  console.log(newArr);
+  return newArr[0][1];
+
+  // let answer = 0;
+  // let biggestCount = 0;
+  // for (let key in count) {
+  //   if (count[key] >= biggestCount) {
+  //     let biggestCount = count[key];
+  //     answer = key;
+  //   }
+  // }
+  // return answer;
 }
-
-count();
+const arr = [12, 10, 8, 12, 7, 6, 4, 10];
+console.log(highestRank(arr));
