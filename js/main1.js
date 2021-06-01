@@ -843,28 +843,52 @@
 // }
 
 // count();
-function highestRank(arr) {
-  //Your Code logic should written here
-  const count = arr.reduce((tally, elem) => {
-    tally[elem] = (tally[elem] || 0) + 1;
-    return tally;
-  }, {});
-  const newArr = Object.entries(count);
-  console.log(newArr);
+// function highestRank(arr) {
+//   //Your Code logic should written here
+//   const count = arr.reduce((tally, elem) => {
+//     tally[elem] = (tally[elem] || 0) + 1;
+//     return tally;
+//   }, {});
+//   const newArr = Object.entries(count);
+//   console.log(newArr);
 
-  newArr.sort((a, b) => b[1] - a[1]);
-  console.log(newArr);
-  return newArr[0][1];
+//   newArr.sort((a, b) => b[1] - a[1]);
+//   console.log(newArr);
+//   return newArr[0][1];
 
-  // let answer = 0;
-  // let biggestCount = 0;
-  // for (let key in count) {
-  //   if (count[key] >= biggestCount) {
-  //     let biggestCount = count[key];
-  //     answer = key;
-  //   }
-  // }
-  // return answer;
-}
-const arr = [12, 10, 8, 12, 7, 6, 4, 10];
-console.log(highestRank(arr));
+//   // let answer = 0;
+//   // let biggestCount = 0;
+//   // for (let key in count) {
+//   //   if (count[key] >= biggestCount) {
+//   //     let biggestCount = count[key];
+//   //     answer = key;
+//   //   }
+//   // }
+//   // return answer;
+// }
+// const arr = [12, 10, 8, 12, 7, 6, 4, 10];
+// console.log(highestRank(arr));
+// function solution(str, ending) {
+//   const sourceArray = str.split("");
+//   const endingArray = ending.split("");
+//   if (endingArray.length === 0) {
+//     return true;
+//   }
+//   console.log(sourceArray);
+//   console.log(endingArray);
+//   let flag = false;
+//   for (let i = 0; i < endingArray.length; i++) {
+//     const endingArray = ending.split("");
+//     if (
+//       endingArray[endingArray.length - i - 1] ===
+//       sourceArray[sourceArray.length - i - 1]
+//     ) {
+//       flag = true;
+//     } else {
+//       return false;
+//     }
+//   }
+//   return flag;
+// }
+// console.log(solution("abc", "bc"));
+// console.log(solution("abc", ""));
