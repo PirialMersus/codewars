@@ -892,3 +892,14 @@
 // }
 // console.log(solution("abc", "bc"));
 // console.log(solution("abc", ""));
+function bmi(weight, height) {
+  const bmi = weight / (height * height);
+  return bmi <= 30.0
+    ? "Overweight"
+    : bmi <= 25.0
+    ? "Normal"
+    : bmi <= 18.5
+    ? "Underweight"
+    : "Obese";
+}
+console.log(bmi(80, 1.8));
